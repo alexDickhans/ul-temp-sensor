@@ -1,0 +1,58 @@
+/ {
+    chosen {
+        zephyr,i2c = &i2c0;
+        zephyr,adc = &adc;
+        zephyr,rtc = &rtc0;
+    };
+    
+    aliases {
+        rtc_int = &gpio0;
+    };
+};
+
+&i2c0 {
+    status = "okay";
+    clock-frequency = <I2C_BITRATE_STANDARD>;
+    
+    bme280@76 {
+        compatible = "bosch,bme280";
+        reg = <0x76>;
+        label = "BME280";
+    };
+    
+    rv3028@52 {
+        compatible = "microcrystal,rv3028";
+        reg = <0x52>;
+        label = "RV3028";
+        int-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;
+    };
+};
+
+&adc {
+    status = "okay";
+    #address-cells = <1>;
+    #size-cells = <0>;
+    
+    channel@0 {
+        reg = <0>;
+        zephyr,gain = "ADC_GAIN_1_4";
+        zephyr,reference = "ADC_REF_INTERNAL";
+        zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+        zephyr,input-positive = <2>;  /* P0.02 for VBAT_SENSE */
+        zephyr,resolution = <12>;
+    };
+};
+
+&gpio0 {
+    status = "okay";
+    
+    /* RTC clock output on P0.03 */
+    rtc-clockout {
+        gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>;
+        label = "RTC_CLOCKOUT";
+    };
+};
+
+&gpio1 {
+    status = "okay";
+};

@@ -1,0 +1,31 @@
+[Unit]
+Description=BLE Sensor Scanner
+Documentation=https://github.com/your-repo/temp-sensor-code
+After=bluetooth.service network.target
+Wants=bluetooth.service
+Requires=bluetooth.service
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/temp-sensor-code/pi_host
+Environment=PATH=/home/pi/temp-sensor-code/pi_host/venv/bin
+Environment=PYTHONPATH=/home/pi/temp-sensor-code/pi_host
+ExecStart=/home/pi/temp-sensor-code/pi_host/venv/bin/python sensor_scanner.py --db /home/pi/sensor_data.db
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=sensor-scanner
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/home/pi/sensor_data.db /home/pi/temp-sensor-code/pi_host
+
+[Install]
+WantedBy=multi-user.target
