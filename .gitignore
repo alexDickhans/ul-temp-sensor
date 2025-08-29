@@ -1,0 +1,331 @@
+# =============================================================================
+# TEMP SENSOR PROJECT - COMPREHENSIVE .GITIGNORE
+# =============================================================================
+
+# =============================================================================
+# KICAD HARDWARE DESIGN FILES
+# =============================================================================
+
+# KiCad autosave files
+*_autosave*
+_autosave-*
+~*_autosave*
+
+# KiCad lock files
+~*.kicad_pcb.lck
+~*.kicad_sch.lck
+~*.kicad_pro.lck
+
+# KiCad backup files
+*-backups/
+*.bak
+*.backup
+
+# KiCad cache files
+fp-info-cache
+*.cache
+
+# KiCad temporary files
+#auto_saved_files#
+*.tmp
+*.temp
+
+# KiCad production files (generated)
+production/
+production_files/
+*.zip
+*.csv
+*.pos
+*.xml
+*.ipc
+
+# KiCad fabrication files (generated)
+fabrication-toolkit-options.json
+
+# =============================================================================
+# EMBEDDED SYSTEMS / ZEPHYR RTOS
+# =============================================================================
+
+# Build directories
+build/
+build-*/
+out/
+build.log
+
+# Zephyr specific
+.west/
+west-topdir/
+west-config
+west.yml.lock
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+
+# Object files and binaries
+*.o
+*.obj
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+*.dis
+*.a
+*.so
+*.dylib
+*.dll
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# =============================================================================
+# PYTHON / HOST SOFTWARE
+# =============================================================================
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# =============================================================================
+# OPERATING SYSTEM FILES
+# =============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.tmp
+*.temp
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# DEVELOPMENT TOOLS
+# =============================================================================
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Editor backup files
+*~
+*.orig
+*.rej
+
+# Logs
+*.log
+logs/
+log/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# =============================================================================
+# DOCKER
+# =============================================================================
+
+# Docker build context
+.dockerignore
+
+# =============================================================================
+# PROJECT SPECIFIC
+# =============================================================================
+
+# Test artifacts
+test_results/
+coverage/
+*.test
+*.test.*
+
+# Documentation builds
+docs/_build/
+docs/build/
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+
+# Configuration files with sensitive data
+config.local.*
+*.local
+.env.local
+.env.production
+
+# =============================================================================
+# VERSION CONTROL
+# =============================================================================
+
+# Git
+.git/
+.gitattributes
+
+# SVN
+.svn/
+
+# Mercurial
+.hg/
+
+# =============================================================================
+# MISCELLANEOUS
+# =============================================================================
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Compressed files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Media files (if any)
+*.mp3
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+*.wav
+*.mpg
+*.mpeg
+
+# =============================================================================
+# END OF .GITIGNORE
+# =============================================================================
