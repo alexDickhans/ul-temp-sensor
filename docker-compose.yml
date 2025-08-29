@@ -1,0 +1,23 @@
+services:
+  nrf-dev:
+    build: .
+    container_name: nrf-connect-sdk-dev
+    volumes:
+      # Mount your project directory
+      - .:/workspace
+      # Mount USB devices for J-Link
+      - /dev/bus/usb:/dev/bus/usb
+      # Mount udev for device access
+      - /run/udev:/run/udev:ro
+    devices:
+      # Allow access to USB devices
+      - /dev/bus/usb
+    environment:
+      # Set display for GUI tools if needed
+      - DISPLAY=${DISPLAY}
+    network_mode: host
+    privileged: true  # Required for USB device access
+    stdin_open: true
+    tty: true
+    working_dir: /workspace
+
